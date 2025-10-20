@@ -41,5 +41,5 @@
 *.dwo
 
 #output directories
-out
-build
+out/
+build/
