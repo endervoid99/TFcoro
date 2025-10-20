@@ -1,6 +1,7 @@
 #include <cstdio>
 
 #include "tfcoro.h"
+#include "sync.h"
 
 tfcoro::task<> exampleCoroutine() {
     co_return;
