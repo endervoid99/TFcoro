@@ -1,8 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"H:/projects/dev/TFcoro/build/Release/cmake_install.cmake",
-		"H:/projects/dev/TFcoro/build/Release/cppcoro/cmake_install.cmake"
-	],
-	"Parallel" : false
-}

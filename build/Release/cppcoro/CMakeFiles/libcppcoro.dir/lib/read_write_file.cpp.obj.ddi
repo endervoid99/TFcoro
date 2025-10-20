@@ -1,9 +1,0 @@
-{
-  "revision": 0,
-  "rules": [
-    {
-      "primary-output": "cppcoro\\CMakeFiles\\libcppcoro.dir\\lib\\read_write_file.cpp.obj"
-    }
-  ],
-  "version": 1
-}

@@ -1,9 +1,0 @@
-{
-  "revision": 0,
-  "rules": [
-    {
-      "primary-output": "cppcoro\\CMakeFiles\\libcppcoro.dir\\lib\\socket_connect_operation.cpp.obj"
-    }
-  ],
-  "version": 1
-}

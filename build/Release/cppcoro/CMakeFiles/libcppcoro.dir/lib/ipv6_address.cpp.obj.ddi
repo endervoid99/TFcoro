@@ -1,9 +1,0 @@
-{
-  "revision": 0,
-  "rules": [
-    {
-      "primary-output": "cppcoro\\CMakeFiles\\libcppcoro.dir\\lib\\ipv6_address.cpp.obj"
-    }
-  ],
-  "version": 1
-}

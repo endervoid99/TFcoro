@@ -1,9 +1,0 @@
-{
-  "revision": 0,
-  "rules": [
-    {
-      "primary-output": "cppcoro\\CMakeFiles\\libcppcoro.dir\\lib\\lightweight_manual_reset_event.cpp.obj"
-    }
-  ],
-  "version": 1
-}
