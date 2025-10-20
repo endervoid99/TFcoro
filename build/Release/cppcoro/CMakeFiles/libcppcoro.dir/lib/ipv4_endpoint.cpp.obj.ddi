@@ -1,0 +1,9 @@
+{
+  "revision": 0,
+  "rules": [
+    {
+      "primary-output": "cppcoro\\CMakeFiles\\libcppcoro.dir\\lib\\ipv4_endpoint.cpp.obj"
+    }
+  ],
+  "version": 1
+}

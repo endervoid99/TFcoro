@@ -1,0 +1,31 @@
+{
+	"bmi-installation" : null,
+	"compiler-frontend-variant" : "GNU",
+	"compiler-id" : "Clang",
+	"compiler-simulate-id" : "MSVC",
+	"config" : "Release",
+	"cxx-modules" : {},
+	"database-info" : null,
+	"dir-cur-bld" : "H:/projects/dev/TFcoro/build/Release",
+	"dir-cur-src" : "H:/projects/dev/TFcoro",
+	"dir-top-bld" : "H:/projects/dev/TFcoro/build/Release",
+	"dir-top-src" : "H:/projects/dev/TFcoro",
+	"exports" : [],
+	"forward-modules-from-target-dirs" : [],
+	"include-dirs" : 
+	[
+		"H:\\projects\\dev\\TFcoro\\include",
+		"H:\\projects\\dev\\TFcoro\\cppcoro\\include"
+	],
+	"language" : "CXX",
+	"linked-target-dirs" : [],
+	"module-dir" : "H:/projects/dev/TFcoro/build/Release/CMakeFiles/testmain.dir",
+	"sources" : 
+	{
+		"CMakeFiles/testmain.dir/main.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "H:/projects/dev/TFcoro/main.cpp"
+		}
+	}
+}

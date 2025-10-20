@@ -1,0 +1,9 @@
+{
+  "revision": 0,
+  "rules": [
+    {
+      "primary-output": "cppcoro\\CMakeFiles\\libcppcoro.dir\\lib\\auto_reset_event.cpp.obj"
+    }
+  ],
+  "version": 1
+}

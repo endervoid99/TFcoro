@@ -1,0 +1,75 @@
+ninja_dyndep_version = 1.0
+build cppcoro/CMakeFiles/libcppcoro.dir/lib/async_auto_reset_event.cpp.obj: dyndep
+
+build cppcoro/CMakeFiles/libcppcoro.dir/lib/async_manual_reset_event.cpp.obj: dyndep
+
+build cppcoro/CMakeFiles/libcppcoro.dir/lib/async_mutex.cpp.obj: dyndep
+
+build cppcoro/CMakeFiles/libcppcoro.dir/lib/auto_reset_event.cpp.obj: dyndep
+
+build cppcoro/CMakeFiles/libcppcoro.dir/lib/cancellation_registration.cpp.obj: dyndep
+
+build cppcoro/CMakeFiles/libcppcoro.dir/lib/cancellation_source.cpp.obj: dyndep
+
+build cppcoro/CMakeFiles/libcppcoro.dir/lib/cancellation_state.cpp.obj: dyndep
+
+build cppcoro/CMakeFiles/libcppcoro.dir/lib/cancellation_token.cpp.obj: dyndep
+
+build cppcoro/CMakeFiles/libcppcoro.dir/lib/file.cpp.obj: dyndep
+
+build cppcoro/CMakeFiles/libcppcoro.dir/lib/file_read_operation.cpp.obj: dyndep
+
+build cppcoro/CMakeFiles/libcppcoro.dir/lib/file_write_operation.cpp.obj: dyndep
+
+build cppcoro/CMakeFiles/libcppcoro.dir/lib/io_service.cpp.obj: dyndep
+
+build cppcoro/CMakeFiles/libcppcoro.dir/lib/ip_address.cpp.obj: dyndep
+
+build cppcoro/CMakeFiles/libcppcoro.dir/lib/ip_endpoint.cpp.obj: dyndep
+
+build cppcoro/CMakeFiles/libcppcoro.dir/lib/ipv4_address.cpp.obj: dyndep
+
+build cppcoro/CMakeFiles/libcppcoro.dir/lib/ipv4_endpoint.cpp.obj: dyndep
+
+build cppcoro/CMakeFiles/libcppcoro.dir/lib/ipv6_address.cpp.obj: dyndep
+
+build cppcoro/CMakeFiles/libcppcoro.dir/lib/ipv6_endpoint.cpp.obj: dyndep
+
+build cppcoro/CMakeFiles/libcppcoro.dir/lib/lightweight_manual_reset_event.cpp.obj: dyndep
+
+build cppcoro/CMakeFiles/libcppcoro.dir/lib/read_only_file.cpp.obj: dyndep
+
+build cppcoro/CMakeFiles/libcppcoro.dir/lib/read_write_file.cpp.obj: dyndep
+
+build cppcoro/CMakeFiles/libcppcoro.dir/lib/readable_file.cpp.obj: dyndep
+
+build cppcoro/CMakeFiles/libcppcoro.dir/lib/socket.cpp.obj: dyndep
+
+build cppcoro/CMakeFiles/libcppcoro.dir/lib/socket_accept_operation.cpp.obj: dyndep
+
+build cppcoro/CMakeFiles/libcppcoro.dir/lib/socket_connect_operation.cpp.obj: dyndep
+
+build cppcoro/CMakeFiles/libcppcoro.dir/lib/socket_disconnect_operation.cpp.obj: dyndep
+
+build cppcoro/CMakeFiles/libcppcoro.dir/lib/socket_helpers.cpp.obj: dyndep
+
+build cppcoro/CMakeFiles/libcppcoro.dir/lib/socket_recv_from_operation.cpp.obj: dyndep
+
+build cppcoro/CMakeFiles/libcppcoro.dir/lib/socket_recv_operation.cpp.obj: dyndep
+
+build cppcoro/CMakeFiles/libcppcoro.dir/lib/socket_send_operation.cpp.obj: dyndep
+
+build cppcoro/CMakeFiles/libcppcoro.dir/lib/socket_send_to_operation.cpp.obj: dyndep
+
+build cppcoro/CMakeFiles/libcppcoro.dir/lib/spin_mutex.cpp.obj: dyndep
+
+build cppcoro/CMakeFiles/libcppcoro.dir/lib/spin_wait.cpp.obj: dyndep
+
+build cppcoro/CMakeFiles/libcppcoro.dir/lib/static_thread_pool.cpp.obj: dyndep
+
+build cppcoro/CMakeFiles/libcppcoro.dir/lib/win32.cpp.obj: dyndep
+
+build cppcoro/CMakeFiles/libcppcoro.dir/lib/writable_file.cpp.obj: dyndep
+
+build cppcoro/CMakeFiles/libcppcoro.dir/lib/write_only_file.cpp.obj: dyndep
+

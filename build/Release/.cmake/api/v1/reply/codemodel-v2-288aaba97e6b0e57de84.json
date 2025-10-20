@@ -1,0 +1,97 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"jsonFile" : "directory-.-Release-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "4.0.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						1,
+						2
+					]
+				},
+				{
+					"build" : "cppcoro",
+					"jsonFile" : "directory-cppcoro-Release-ea3b06c05f8cda62caac.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "4.0.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "cppcoro",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1
+					],
+					"name" : "TFCoro",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "libcppcoro::@82ae41f3a83f358e1517",
+					"jsonFile" : "target-libcppcoro-Release-39fa421123fe2844cd9e.json",
+					"name" : "libcppcoro",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "libtfcoro::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-libtfcoro-Release-5fbacf59b03b1dc1b829.json",
+					"name" : "libtfcoro",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "testmain::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-testmain-Release-3319dbecbb5c73dbb8be.json",
+					"name" : "testmain",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "H:/projects/dev/TFcoro/build/Release",
+		"source" : "H:/projects/dev/TFcoro"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 8
+	}
+}

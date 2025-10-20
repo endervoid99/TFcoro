@@ -1,0 +1,6 @@
+file(GLOB CPPCORO_SOURCES lib/*.cpp lib/**/*.cpp)
+add_library(libcppcoro ${CPPCORO_SOURCES})
+add_library(libcppcoro::cppcoro ALIAS libcppcoro)
+file(GLOB CPPCORO_HEADERS include/cppcoro/*.hpp include/cppcoro/**/*.hpp)
+target_sources(libcppcoro INTERFACE ${CPPCORO_HEADERS})
+target_include_directories(libcppcoro PUBLIC include)

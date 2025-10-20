@@ -1,0 +1,65 @@
+{
+    "version": 8,
+    "configurePresets": [
+        {
+            "name": "Debug",
+            "displayName": "Debug",
+            "description": "Sets Ninja generator, build and install directory",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_TOOLCHAIN_FILE": "",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/build/install/${presetName}"               
+            }
+        },
+        {
+            "name": "Release",
+            "displayName": "Release",
+            "description": "Sets Ninja generator, build and install directory",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release",
+                "CMAKE_TOOLCHAIN_FILE": "",
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/build/install/${presetName}",
+                "CMAKE_CXX_FLAGS": "-O3 -g -pthread"
+            }
+        },
+                {
+            "name": "Shipping",
+            "displayName": "Shipping",
+            "description": "Sets Ninja generator, build and install directory",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Shipping",
+                "CMAKE_TOOLCHAIN_FILE": "",
+                "SHIPPING_BUILD": "ON",
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/build/install/${presetName}",
+                "CMAKE_CXX_FLAGS": "-O3 -g -pthread"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "Debug",
+            "description": "",
+            "displayName": "",
+            "configurePreset": "Debug"
+        },
+        {
+            "name": "Shipping",
+            "description": "",
+            "displayName": "",
+            "configurePreset": "Shipping"
+        },
+        {
+            "name": "Release",
+            "description": "",
+            "displayName": "",
+            "configurePreset": "Release"
+        }
+    ]
+}
