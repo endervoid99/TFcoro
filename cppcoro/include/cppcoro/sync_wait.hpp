@@ -28,7 +28,7 @@ namespace cppcoro
 		auto task = detail::make_sync_wait_task(std::forward<AWAITABLE>(awaitable));
 #endif
 		detail::lightweight_manual_reset_event event;
-		task.start(event);
+		task.start(event);		
 		event.wait();
 		return task.result();
 	}

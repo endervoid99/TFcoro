@@ -290,8 +290,8 @@ namespace cppcoro
 			typename RESULT = typename cppcoro::awaitable_traits<AWAITABLE&&>::await_result_t,
 			std::enable_if_t<std::is_void_v<RESULT>, int> = 0>
 		sync_wait_task<void> make_sync_wait_task(AWAITABLE&& awaitable)
-		{
-			co_await std::forward<AWAITABLE>(awaitable);
+		{			
+			co_await std::forward<AWAITABLE>(awaitable);			
 		}
 #endif
 	}

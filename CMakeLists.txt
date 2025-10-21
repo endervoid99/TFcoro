@@ -1,5 +1,9 @@
 cmake_minimum_required(VERSION 4.0.0)
 
+# Uncomment these lines if you want to set compiler in CMakeLists.txt instead of presets
+# set(CMAKE_C_COMPILER clang)
+# set(CMAKE_CXX_COMPILER clang++)
+
 project (TFCoro VERSION 1.0.0 LANGUAGES CXX C)
 
 set(CMAKE_CXX_STANDARD 23)
@@ -31,7 +35,9 @@ add_subdirectory(cppcoro)
 target_link_libraries(libtfcoro PRIVATE libcppcoro::cppcoro)
 
 #test main
-file(GLOB TESTMAIN_SOURCES src/*.cpp src/**/*.cpp main.cpp)
+
+
+file(GLOB TESTMAIN_SOURCES src/*.cpp src/**/*.cpp testbed/main.cpp)
 add_executable(testmain ${TESTMAIN_SOURCES})
 file(GLOB TFCORO_HEADERS include/*.hpp include/**/*.hpp)
 target_sources(testmain INTERFACE ${TFCORO_HEADERS})
@@ -42,4 +48,5 @@ target_link_libraries(testmain PRIVATE libcppcoro::cppcoro)
 target_link_libraries(testmain PRIVATE libtfcoro::libtfcoro)
 
 include_directories(cppcoro/include)
+include_directories(include)
 

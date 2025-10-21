@@ -7,18 +7,18 @@
 
 /////////////////////////////////////////////////////////////////////////////
 // Compiler Detection
-
-#if defined(_MSC_VER)
-# define CPPCORO_COMPILER_MSVC _MSC_FULL_VER
-#else
-# define CPPCORO_COMPILER_MSVC 0
-#endif
+// Note: Check Clang first since it can define _MSC_VER on Windows for compatibility
 
 #if defined(__clang__)
 # define CPPCORO_COMPILER_CLANG (__clang_major__ * 10000 + \
                                  __clang_minor__ * 100 + \
                                  __clang_patchlevel__)
+# define CPPCORO_COMPILER_MSVC 0
+#elif defined(_MSC_VER)
+# define CPPCORO_COMPILER_MSVC _MSC_FULL_VER
+# define CPPCORO_COMPILER_CLANG 0
 #else
+# define CPPCORO_COMPILER_MSVC 0
 # define CPPCORO_COMPILER_CLANG 0
 #endif
 
