@@ -23,6 +23,7 @@ tfcoro::task<> exampleCoroutine() {
 }
 
 int main() {
+    
     // Start a thread that will set the event after 2 seconds
     std::thread eventSetter([&]() {
         std::this_thread::sleep_for(std::chrono::seconds(2));
