@@ -3,7 +3,7 @@
     "configurePresets": [
         {
             "name": "Debug",
-            "displayName": "Debug",
+            "displayName": "Debug (Clang/Ninja)",
             "description": "Sets Ninja generator, build and install directory",
             "generator": "Ninja",
             "binaryDir": "${sourceDir}/build/${presetName}",
@@ -12,6 +12,8 @@
                 "CMAKE_TOOLCHAIN_FILE": "",
                 "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
                 "CMAKE_INSTALL_PREFIX": "${sourceDir}/build/install/${presetName}",
+                "CMAKE_CXX_STANDARD": "23",
+                "CMAKE_CXX_STANDARD_REQUIRED": "ON",
                 "CMAKE_CXX_FLAGS": "-g -O0 -DDEBUG -Wall -Werror -Wvarargs",                
                 "CMAKE_C_COMPILER": "clang",
                 "CMAKE_CXX_COMPILER": "clang++"
@@ -19,7 +21,7 @@
         },
         {
             "name": "Release",
-            "displayName": "Release",
+            "displayName": "Release (Clang/Ninja)",
             "description": "Sets Ninja generator, build and install directory",
             "generator": "Ninja",
             "binaryDir": "${sourceDir}/build/${presetName}",
@@ -27,14 +29,16 @@
                 "CMAKE_BUILD_TYPE": "Release",
                 "CMAKE_TOOLCHAIN_FILE": "",
                 "CMAKE_INSTALL_PREFIX": "${sourceDir}/build/install/${presetName}",
+                "CMAKE_CXX_STANDARD": "23",
+                "CMAKE_CXX_STANDARD_REQUIRED": "ON",
                 "CMAKE_CXX_FLAGS": "-O2 -g -pthread -DNDEBUG",
                 "CMAKE_C_COMPILER": "clang",
                 "CMAKE_CXX_COMPILER": "clang++"
             }
         },
-                {
+        {
             "name": "Shipping",
-            "displayName": "Shipping",
+            "displayName": "Shipping (Clang/Ninja)",
             "description": "Sets Ninja generator, build and install directory",
             "generator": "Ninja",
             "binaryDir": "${sourceDir}/build/${presetName}",
@@ -43,30 +47,151 @@
                 "CMAKE_TOOLCHAIN_FILE": "",
                 "SHIPPING_BUILD": "ON",
                 "CMAKE_INSTALL_PREFIX": "${sourceDir}/build/install/${presetName}",
+                "CMAKE_CXX_STANDARD": "23",
+                "CMAKE_CXX_STANDARD_REQUIRED": "ON",
                 "CMAKE_CXX_FLAGS": "-O3 -pthread -DNDEBUG -flto -fvisibility=hidden -s",
                 "CMAKE_C_COMPILER": "clang",
                 "CMAKE_CXX_COMPILER": "clang++"
+            }
+        },
+        {
+            "name": "vs2022-Debug",
+            "displayName": "Debug (Visual Studio 2022)",
+            "description": "Debug configuration using Visual Studio 2022 generator",
+            "generator": "Visual Studio 17 2022",
+            "architecture": "x64",
+            "binaryDir": "${sourceDir}/build/vs2022/${presetName}",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/build/install/vs2022/${presetName}",
+                "CMAKE_CXX_STANDARD": "23",
+                "CMAKE_CXX_STANDARD_REQUIRED": "ON",
+                "CMAKE_CXX_FLAGS": "/MP /EHsc",
+                "CMAKE_MSVC_RUNTIME_LIBRARY": "MultiThreadedDebugDLL"
+            }
+        },
+        {
+            "name": "vs2022-Release",
+            "displayName": "Release (Visual Studio 2022)",
+            "description": "Release configuration using Visual Studio 2022 generator",
+            "generator": "Visual Studio 17 2022",
+            "architecture": "x64",
+            "binaryDir": "${sourceDir}/build/vs2022/${presetName}",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release",
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/build/install/vs2022/${presetName}",
+                "CMAKE_CXX_STANDARD": "23",
+                "CMAKE_CXX_STANDARD_REQUIRED": "ON",
+                "CMAKE_CXX_FLAGS": "/MP /EHsc",
+                "CMAKE_MSVC_RUNTIME_LIBRARY": "MultiThreadedDLL"
+            }
+        },
+        {
+            "name": "vs2019-Debug",
+            "displayName": "Debug (Visual Studio 2019)",
+            "description": "Debug configuration using Visual Studio 2019 generator",
+            "generator": "Visual Studio 16 2019",
+            "architecture": "x64",
+            "binaryDir": "${sourceDir}/build/vs2019/${presetName}",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/build/install/vs2019/${presetName}",
+                "CMAKE_CXX_STANDARD": "23",
+                "CMAKE_CXX_STANDARD_REQUIRED": "ON",
+                "CMAKE_CXX_FLAGS": "/MP /EHsc",
+                "CMAKE_MSVC_RUNTIME_LIBRARY": "MultiThreadedDebugDLL"
+            }
+        },
+        {
+            "name": "vs2019-Release",
+            "displayName": "Release (Visual Studio 2019)",
+            "description": "Release configuration using Visual Studio 2019 generator",
+            "generator": "Visual Studio 16 2019",
+            "architecture": "x64",
+            "binaryDir": "${sourceDir}/build/vs2019/${presetName}",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release",
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/build/install/vs2019/${presetName}",
+                "CMAKE_CXX_STANDARD": "23",
+                "CMAKE_CXX_STANDARD_REQUIRED": "ON",
+                "CMAKE_CXX_FLAGS": "/MP /EHsc",
+                "CMAKE_MSVC_RUNTIME_LIBRARY": "MultiThreadedDLL"
             }
         }
     ],
     "buildPresets": [
         {
             "name": "Debug",
-            "description": "",
-            "displayName": "",
-            "configurePreset": "Debug"
-        },
-        {
-            "name": "Shipping",
-            "description": "",
-            "displayName": "",
-            "configurePreset": "Shipping"
+            "description": "Debug build with Ninja",
+            "displayName": "Debug (Clang/Ninja)",
+            "configurePreset": "Debug",
+            "nativeToolOptions": [
+                "-j8"
+            ]
         },
         {
             "name": "Release",
-            "description": "",
-            "displayName": "",
-            "configurePreset": "Release"
+            "description": "Release build with Ninja",
+            "displayName": "Release (Clang/Ninja)",
+            "configurePreset": "Release",
+            "nativeToolOptions": [
+                "-j8"
+            ]
+        },
+        {
+            "name": "Shipping",
+            "description": "Shipping build with Ninja",
+            "displayName": "Shipping (Clang/Ninja)",
+            "configurePreset": "Shipping",
+            "nativeToolOptions": [
+                "-j8"
+            ]
+        },
+        {
+            "name": "vs2022-Debug",
+            "description": "Debug build with Visual Studio 2022",
+            "displayName": "Debug (Visual Studio 2022)",
+            "configurePreset": "vs2022-Debug",
+            "configuration": "Debug",
+            "nativeToolOptions": [
+                "/m",
+                "/p:CL_MPcount=8"
+            ]
+        },
+        {
+            "name": "vs2022-Release",
+            "description": "Release build with Visual Studio 2022",
+            "displayName": "Release (Visual Studio 2022)",
+            "configurePreset": "vs2022-Release",
+            "configuration": "Release",
+            "nativeToolOptions": [
+                "/m",
+                "/p:CL_MPcount=8"
+            ]
+        },
+        {
+            "name": "vs2019-Debug",
+            "description": "Debug build with Visual Studio 2019",
+            "displayName": "Debug (Visual Studio 2019)",
+            "configurePreset": "vs2019-Debug",
+            "configuration": "Debug",
+            "nativeToolOptions": [
+                "/m",
+                "/p:CL_MPcount=8"
+            ]
+        },
+        {
+            "name": "vs2019-Release",
+            "description": "Release build with Visual Studio 2019",
+            "displayName": "Release (Visual Studio 2019)",
+            "configurePreset": "vs2019-Release",
+            "configuration": "Release",
+            "nativeToolOptions": [
+                "/m",
+                "/p:CL_MPcount=8"
+            ]
         }
     ]
 }
