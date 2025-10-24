@@ -30,8 +30,8 @@ int main() {
         printf("Setting event from background thread\n");
         event.set();
     });
-
-    std::thread secondWaiter([&]() {        
+       
+    std::thread secondWaiter([&]() {     
         printf("Waiting for event on other thread\n");
         tfcoro::sync_wait(exampleCoroutine());        
     });

@@ -29,7 +29,13 @@ if(CMAKE_BUILD_TYPE STREQUAL "Shipping" OR CMAKE_CONFIGURATION_TYPES MATCHES "Sh
     add_compile_definitions(SHIPPING_BUILD)
 endif()
 
+# Build cppcoro (Windows-specific files are excluded in cppcoro/CMakeLists.txt)
 include_directories(cppcoro/include)
+add_subdirectory(cppcoro)
+
+# Find source files (excluding testbed)
+file(GLOB_RECURSE TFCORO_SOURCES src/*.cpp)
+list(FILTER TFCORO_SOURCES EXCLUDE REGEX ".*/testbed/.*")
 
 # Collect source files while preserving directory structure
 file(GLOB_RECURSE TFCORO_SOURCES_ALL 
@@ -91,9 +97,10 @@ foreach(source IN LISTS TESTMAIN_ALL_FILES)
 endforeach()
 
 target_include_directories(testmain PUBLIC include)
-target_include_directories(testmain PUBLIC cppcoro/include)
 
+target_include_directories(testmain PUBLIC cppcoro/include)
 target_link_libraries(testmain PRIVATE libcppcoro::cppcoro)
+
 target_link_libraries(testmain PRIVATE libtfcoro::libtfcoro)
 
 # Set working directory for Visual Studio debugging
