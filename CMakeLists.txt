@@ -21,32 +21,46 @@ if(CMAKE_BUILD_TYPE STREQUAL "Shipping" OR CMAKE_CONFIGURATION_TYPES MATCHES "Sh
     add_compile_definitions(SHIPPING_BUILD)
 endif()
 
+# Build cppcoro (Windows-specific files are excluded in cppcoro/CMakeLists.txt)
 include_directories(cppcoro/include)
-
-file(GLOB TFCORO_SOURCES src/*.cpp src/**/*.cpp)
-add_library(libtfcoro ${TFCORO_SOURCES})
-add_library(libtfcoro::libtfcoro ALIAS libtfcoro)
-file(GLOB TFCORO_HEADERS include/*.hpp include/**/*.hpp)
-target_sources(libtfcoro INTERFACE ${TFCORO_HEADERS})
-target_include_directories(libtfcoro PUBLIC include)
-target_include_directories(libtfcoro PUBLIC cppcoro/include)
-
 add_subdirectory(cppcoro)
-target_link_libraries(libtfcoro PRIVATE libcppcoro::cppcoro)
+
+# Find source files (excluding testbed)
+file(GLOB_RECURSE TFCORO_SOURCES src/*.cpp)
+list(FILTER TFCORO_SOURCES EXCLUDE REGEX ".*/testbed/.*")
+
+# Only create library if we have source files
+if(TFCORO_SOURCES)
+    add_library(libtfcoro ${TFCORO_SOURCES})
+    add_library(libtfcoro::libtfcoro ALIAS libtfcoro)
+    file(GLOB TFCORO_HEADERS include/*.hpp include/**/*.hpp)
+    target_sources(libtfcoro INTERFACE ${TFCORO_HEADERS})
+    target_include_directories(libtfcoro PUBLIC include)
+
+    target_include_directories(libtfcoro PUBLIC cppcoro/include)
+    target_link_libraries(libtfcoro PRIVATE libcppcoro::cppcoro)
+else()
+    # Create a header-only interface library
+    add_library(libtfcoro INTERFACE)
+    add_library(libtfcoro::libtfcoro ALIAS libtfcoro)
+    file(GLOB TFCORO_HEADERS include/*.h include/*.hpp include/**/*.h include/**/*.hpp)
+    target_sources(libtfcoro INTERFACE ${TFCORO_HEADERS})
+    target_include_directories(libtfcoro INTERFACE include)
+
+    target_include_directories(libtfcoro INTERFACE cppcoro/include)
+    target_link_libraries(libtfcoro INTERFACE libcppcoro::cppcoro)
+endif()
 
 #test main
-
-
-file(GLOB TESTMAIN_SOURCES src/*.cpp src/**/*.cpp testbed/main.cpp)
-add_executable(testmain ${TESTMAIN_SOURCES})
-file(GLOB TFCORO_HEADERS include/*.hpp include/**/*.hpp)
+add_executable(testmain src/testbed/main.cpp)
+file(GLOB TFCORO_HEADERS include/*.h include/*.hpp include/**/*.h include/**/*.hpp)
 target_sources(testmain INTERFACE ${TFCORO_HEADERS})
 target_include_directories(testmain PUBLIC include)
-target_include_directories(testmain PUBLIC cppcoro/include)
 
+target_include_directories(testmain PUBLIC cppcoro/include)
 target_link_libraries(testmain PRIVATE libcppcoro::cppcoro)
+
 target_link_libraries(testmain PRIVATE libtfcoro::libtfcoro)
 
-include_directories(cppcoro/include)
 include_directories(include)
 
